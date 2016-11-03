@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         
         let point = sender.location(in: view)
         let translation = sender.translation(in: view)
+        let velocity = sender.velocity(in: view)
+        
 
         if sender.state == .began{
             print("Gesture began at: \(point)")
@@ -36,6 +38,16 @@ class ViewController: UIViewController {
             
             UIView.animate(withDuration: 0.3, animations: {
                  self.trayView.center = CGPoint(x: self.startPoint.x, y: self.startPoint.y+translation.y)
+                if velocity.y > 0.0 {
+                    //going down
+                    self.trayView.frame.origin.y = self.view.frame.size.height - 20
+                }
+                else {
+                    //going up
+                    
+                    self.trayView.frame.origin.y = self.view.frame.size.height-self.trayView.frame.size.height
+                }
+                
                 
             })
            
