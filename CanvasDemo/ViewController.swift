@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     var startPoint : CGPoint!
     @IBOutlet weak var trayView: UIView!
     
-    var newlyCreatedImageView:UIImageView!
+    var newlyCreatedImageView:UIImageView! {
+        didSet {
+            newlyCreatedImageView.isUserInteractionEnabled = true
+            let gestureRec = UIPanGestureRecognizer(target: self, action: #selector(onNewImageView(_:)))
+            newlyCreatedImageView.addGestureRecognizer(gestureRec)
+        }
+    }
     
     var startPointOfImage: CGPoint!
     
@@ -63,35 +69,55 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onImageView(_ sender: UIPanGestureRecognizer) {
-        
+        let imageView = sender.view as! UIImageView
+
         let translation = sender.translation(in: view)
         
-        
+//        let oldImageViewTranslate 
         if sender.state == .began{
-            
+            print("Gesture began at")
+
             let imageView = sender.view as! UIImageView
             startPointOfImage = imageView.center
-
+            
+            startPointOfImage = imageView.center
+            newlyCreatedImageView = UIImageView(image: imageView.image)
+            self.view.addSubview(newlyCreatedImageView)
+            newlyCreatedImageView.center = imageView.center
+            newlyCreatedImageView.center.y += trayView.frame.origin.y
             
         }else if sender.state == .changed{
+            print("Gesture changed aT")
 
-            let imageView = sender.view as! UIImageView
-
-            imageView.center = CGPoint(x: startPointOfImage.x + translation.x, y: startPointOfImage.y + translation.y)
-            
-            
+//            let imageView = sender.view as! UIImageView
+            newlyCreatedImageView.center = CGPoint(x: startPointOfImage.x + translation.x, y: startPointOfImage.y + translation.y + trayView.frame.origin.y)
+        
         }else if sender.state == .ended{
             
-            let imageView = sender.view as! UIImageView
-            startPointOfImage = imageView.center
             
-            newlyCreatedImageView = UIImageView(image: imageView.image)            
-            self.view.addSubview(newlyCreatedImageView)
+
             
-            newlyCreatedImageView.center = imageView.center
+//            self.addPanTo(imageView: newlyCreatedImageView)
+            
+        }
+    }
+    
+    
+//    func addPanTo(imageView:UIImageView) {
+//        let gestureRec = UIPanGestureRecognizer(target: self, action: #selector(onNewImageView(_:)))
+//        imageView.addGestureRecognizer(gestureRec)
+//        imageView.isUserInteractionEnabled = true
+//        
+//
+//    }
+    
+    func onNewImageView(_ sender: UIPanGestureRecognizer) {
+        
+        if sender.state == .began {
+            print("ON NEW IMAGE VIEW")
+ 
         }
         
     }
-
 }
 
