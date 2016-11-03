@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     var newlyCreatedImageView:UIImageView!
     
+    var startPointOfImage: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,12 +52,8 @@ class ViewController: UIViewController {
                     
                     self.trayView.frame.origin.y = self.view.frame.size.height-self.trayView.frame.size.height
                 }
-                
-                
             })
-           
-            
-            
+          
         }
         
     }
@@ -65,20 +63,32 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onImageView(_ sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translation(in: view)
+        
+        
         if sender.state == .began{
             
             let imageView = sender.view as! UIImageView
-            
-            newlyCreatedImageView = UIImageView(image: imageView.image)
-            
-            
-            self.view.addSubview(newlyCreatedImageView)
-            
-            newlyCreatedImageView.center = imageView.center
+            startPointOfImage = imageView.center
+
             
         }else if sender.state == .changed{
 
+            let imageView = sender.view as! UIImageView
+
+            imageView.center = CGPoint(x: startPointOfImage.x + translation.x, y: startPointOfImage.y + translation.y)
+            
+            
         }else if sender.state == .ended{
+            
+            let imageView = sender.view as! UIImageView
+            startPointOfImage = imageView.center
+            
+            newlyCreatedImageView = UIImageView(image: imageView.image)            
+            self.view.addSubview(newlyCreatedImageView)
+            
+            newlyCreatedImageView.center = imageView.center
         }
         
     }
