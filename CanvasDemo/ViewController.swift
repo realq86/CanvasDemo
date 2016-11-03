@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     var startPoint : CGPoint!
     @IBOutlet weak var trayView: UIView!
+    
+    var newlyCreatedImageView:UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
                  self.trayView.center = CGPoint(x: self.startPoint.x, y: self.startPoint.y+translation.y)
                 if velocity.y > 0.0 {
                     //going down
-                    self.trayView.frame.origin.y = self.view.frame.size.height - 20
+                    self.trayView.frame.origin.y = self.view.frame.size.height - 30
                 }
                 else {
                     //going up
@@ -61,6 +64,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onImageView(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began{
+            
+            let imageView = sender.view as! UIImageView
+            
+            newlyCreatedImageView = UIImageView(image: imageView.image)
+            
+            
+            self.view.addSubview(newlyCreatedImageView)
+            
+            newlyCreatedImageView.center = imageView.center
+            
+        }else if sender.state == .changed{
+
+        }else if sender.state == .ended{
+        }
+        
+    }
 
 }
 
