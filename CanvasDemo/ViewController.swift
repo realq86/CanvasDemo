@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         
         
         let point = sender.location(in: view)
+        let translation = sender.translation(in: view)
+
         if sender.state == .began{
             print("Gesture began at: \(point)")
             startPoint = trayView.center
@@ -28,10 +30,17 @@ class ViewController: UIViewController {
             
         }else if sender.state == .changed{
             print("Gesture changed at: \(point)")
-            trayView.center = CGPoint(x: startPoint.x, y: startPoint.y+point.y)
+           trayView.center = CGPoint(x: startPoint.x, y: startPoint.y+translation.y)
         }else if sender.state == .ended{
             print("Gesture ended at: \(point)")
-            trayView.center = CGPoint(x: startPoint.x, y: startPoint.y+point.y)
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                 self.trayView.center = CGPoint(x: self.startPoint.x, y: self.startPoint.y+translation.y)
+                
+            })
+           
+            
+            
         }
         
     }
