@@ -14,9 +14,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <view contentMode="scaleToFill" id="Nfz-hf-7kH">
                                 <frame key="frameInset" minY="480" width="375" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+=======
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfz-hf-7kH">
+                                <rect key="frame" x="0.0" y="487" width="375" height="180"/>
+>>>>>>> 63b471577b690bce1b0fbe6a40b3195a5781c92f
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" id="oNl-Gj-6LF">
                                         <frame key="frameInset" minX="88" minY="52" width="50" height="50"/>
@@ -45,6 +50,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+<<<<<<< HEAD
+=======
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Mmh-eE-YuK"/>
+                                </constraints>
+>>>>>>> 63b471577b690bce1b0fbe6a40b3195a5781c92f
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="oan-QY-dOY" appends="YES" id="Xou-3A-slK"/>
                                 </connections>
