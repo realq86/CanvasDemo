@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,60 +13,81 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CanvasDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <view contentMode="scaleToFill" id="Nfz-hf-7kH">
-                                <frame key="frameInset" minY="480" width="375" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-=======
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfz-hf-7kH">
-                                <rect key="frame" x="0.0" y="487" width="375" height="180"/>
->>>>>>> 63b471577b690bce1b0fbe6a40b3195a5781c92f
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" id="oNl-Gj-6LF">
-                                        <frame key="frameInset" minX="88" minY="52" width="50" height="50"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-Gj-6LF">
+                                        <rect key="frame" x="92" y="52" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Vt9-R6-ivH" appends="YES" id="5zd-9S-HK4"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy" id="43Y-DP-bZX">
-                                        <frame key="frameInset" minX="166" minY="52" width="50" height="50"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="43Y-DP-bZX">
+                                        <rect key="frame" x="166" y="52" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1wk-ut-Zlf" appends="YES" id="Whv-nc-HR0"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="excited" id="847-PR-h1c">
-                                        <frame key="frameInset" minX="249" minY="52" width="50" height="50"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="excited" translatesAutoresizingMaskIntoConstraints="NO" id="847-PR-h1c">
+                                        <rect key="frame" x="249" y="52" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="lSO-Wd-VF2" appends="YES" id="Zgy-gR-nZ6"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wink" id="cDd-nL-s17">
-                                        <frame key="frameInset" minX="88" minY="126" width="50" height="50"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wink" translatesAutoresizingMaskIntoConstraints="NO" id="cDd-nL-s17">
+                                        <rect key="frame" x="88" y="126" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="OcX-cw-CZR" appends="YES" id="QSY-PM-KeI"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dead" id="PkV-Jh-dzx">
-                                        <frame key="frameInset" minX="166" minY="126" width="50" height="50"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dead" translatesAutoresizingMaskIntoConstraints="NO" id="PkV-Jh-dzx">
+                                        <rect key="frame" x="166" y="126" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="BID-kU-8Bf" appends="YES" id="4Mg-R4-xOJ"/>
+                                        </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_arrow" id="FJA-7k-tIi">
-                                        <frame key="frameInset" minX="179" minY="8" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="FJA-7k-tIi">
+                                        <rect key="frame" x="179" y="8" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-<<<<<<< HEAD
-=======
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="Mmh-eE-YuK"/>
+                                    <constraint firstAttribute="height" constant="200" id="Mmh-eE-YuK"/>
                                 </constraints>
->>>>>>> 63b471577b690bce1b0fbe6a40b3195a5781c92f
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="oan-QY-dOY" appends="YES" id="Xou-3A-slK"/>
                                 </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nfz-hf-7kH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="36V-Ff-eoJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nfz-hf-7kH" secondAttribute="bottom" id="4qt-I6-xNl"/>
+                            <constraint firstAttribute="trailing" secondItem="Nfz-hf-7kH" secondAttribute="trailing" id="Dci-ZZ-4Vn"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="arrayImageView" destination="FJA-7k-tIi" id="gMK-ON-PNu"/>
                         <outlet property="trayView" destination="Nfz-hf-7kH" id="oSI-3p-59Y"/>
                     </connections>
                 </viewController>
@@ -73,8 +97,33 @@
                         <action selector="onTtayPanGesture:" destination="BYZ-38-t0r" id="tzK-u8-AJf"/>
                     </connections>
                 </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Vt9-R6-ivH">
+                    <connections>
+                        <action selector="onImageView:" destination="BYZ-38-t0r" id="jjo-8c-vHB"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1wk-ut-Zlf">
+                    <connections>
+                        <action selector="onImageView:" destination="BYZ-38-t0r" id="vsA-2q-24R"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="lSO-Wd-VF2">
+                    <connections>
+                        <action selector="onImageView:" destination="BYZ-38-t0r" id="Rqg-HL-AEL"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="OcX-cw-CZR">
+                    <connections>
+                        <action selector="onImageView:" destination="BYZ-38-t0r" id="7W6-6e-grt"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="BID-kU-8Bf">
+                    <connections>
+                        <action selector="onImageView:" destination="BYZ-38-t0r" id="rDu-YG-cQz"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="20.5" y="59.5"/>
+            <point key="canvasLocation" x="32.799999999999997" y="53.523238380809602"/>
         </scene>
     </scenes>
     <resources>
@@ -85,9 +134,4 @@
         <image name="sad" width="60" height="60"/>
         <image name="wink" width="60" height="60"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
